@@ -1,0 +1,14 @@
+name: Keep API Alive
+
+on:
+  schedule:
+    - cron: '*/13 * * * *'  # This runs the job every 13 minutes
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping my API
+        run: |
+          curl -s -o /dev/null https://hng12-backendstagezerotask.onrender.com
