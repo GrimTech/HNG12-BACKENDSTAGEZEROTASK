@@ -76,7 +76,7 @@ const HOST = process.env.HOST || 'localhost';
 // Start the server
 const start = async () => {
     try {
-        await fastify.listen({ port: PORT });
+        await fastify.listen({ host: '0.0.0.0', port: PORT });
         fastify.log.info(`Server listening on http://${HOST}:${PORT} in ${process.env.NODE_ENV} mode`);
     } catch (err) {
         fastify.log.error(err);
