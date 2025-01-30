@@ -47,7 +47,7 @@ fastify.get('/', {
     try {
         // Prepare the response data
         const responseData = {
-            email: 'your_email@example.com', 
+            email: 'olusijackson@gmail.com', 
             current_datetime: new Date().toISOString(),
             githubUrl: getGitHubRepo()
         };
