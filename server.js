@@ -31,7 +31,7 @@ const responseSchema = {
     properties: {
         email: { type: 'string', format: 'email' },
         current_datetime: { type: 'string', format: 'date-time' },
-        githubUrl: { type: 'string', format: 'uri' }
+        github_url: { type: 'string', format: 'uri' }
     },
     required: ['email', 'current_datetime', 'githubUrl']
 };
@@ -49,7 +49,7 @@ fastify.get('/', {
         const responseData = {
             email: 'olusijackson@gmail.com', 
             current_datetime: new Date().toISOString(),
-            githubUrl: getGitHubRepo()
+            github_url: getGitHubRepo()
         };
 
         // Set the response type to JSON
