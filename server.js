@@ -33,7 +33,7 @@ const responseSchema = {
         current_datetime: { type: 'string', format: 'date-time' },
         github_url: { type: 'string', format: 'uri' }
     },
-    required: ['email', 'current_datetime', 'githubUrl']
+    required: ['email', 'current_datetime', 'github_url']
 };
 
 // Define the API route with schema validation
