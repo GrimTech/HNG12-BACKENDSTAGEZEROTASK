@@ -11,4 +11,13 @@ jobs:
     steps:
       - name: Ping my API
         run: |
-          curl -s -o /dev/null https://hng12-backendstagezerotask.onrender.com
+          start_time=$(date +%s%N)  # Get the start time in nanoseconds
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://hng12-backendstagezerotask.onrender.com)  # Replace with your actual API URL
+          end_time=$(date +%s%N)  # Get the end time in nanoseconds
+          response_time=$((($end_time - $start_time) / 1000000))  # Calculate response time in milliseconds
+          
+          echo "Response Code: $response"
+          echo "Response Time: ${response_time}ms"
+
+          # Save the response time to a file
+          echo "$(date): Response Code: $response, Response Time: ${response_time}ms" >> response_times.log
